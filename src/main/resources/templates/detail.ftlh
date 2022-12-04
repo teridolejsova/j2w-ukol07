@@ -9,17 +9,18 @@
 </head>
 <body>
 
-<h1>Tady bude můj blog…</h1>
+<h1>Detaila postu</h1>
 
 <ul>
-    [#list seznamPostu as post]
         <li>
-            <a href="detail/${post.slug?no_esc}"> ${post.title}</a> <br>
-            ${post.perex} <br>
-            ${post.body} <br>
+            [#--${jedenPost.published} <br>--]
+            ${jedenPost.title}<br>
+            ${jedenPost.slug}<br>
+            ${jedenPost.perex}<br>
+            ${jedenPost.body}<br>
+            ${jedenPost.author}<br>
 
         </li>
-    [/#list]
 </ul>
 
 </body>
