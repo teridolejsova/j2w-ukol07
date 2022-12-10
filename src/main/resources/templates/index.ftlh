@@ -17,6 +17,8 @@
             <a href="detail/${post.slug?no_esc}"> ${post.title}</a> <br>
             ${post.perex} <br>
             ${post.body} <br>
+            ${post.published?date} <br>
+
 
         </li>
     [/#list]

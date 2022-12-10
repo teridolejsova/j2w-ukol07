@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h1>Detaila postu</h1>
+<h1>Detail postu</h1>
 
 <ul>
         <li>

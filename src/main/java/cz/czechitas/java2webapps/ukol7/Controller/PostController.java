@@ -1,8 +1,10 @@
 package cz.czechitas.java2webapps.ukol7.Controller;
 
+import cz.czechitas.java2webapps.ukol7.entity.Post;
 import cz.czechitas.java2webapps.ukol7.repository.PostRepository;
 import cz.czechitas.java2webapps.ukol7.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -17,9 +19,11 @@ public class PostController {
     private PostService postService;
 
     @GetMapping("/")
-    public ModelAndView seznamPostu(@PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC, size = 20) Pageable pageable) {
+    public ModelAndView seznamPostu() {
+        PageRequest pageRequest = PageRequest.of(0,20);
        ModelAndView modelAndView=new ModelAndView("index")
-               .addObject("seznamPostu",postService.seznampostu(pageable));
+               .addObject("seznamPostu",postService.seznampostu(pageRequest));
+
         return modelAndView;
     }
     @GetMapping("/detail/{slug}")
